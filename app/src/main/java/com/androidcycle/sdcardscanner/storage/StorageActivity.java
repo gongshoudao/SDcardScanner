@@ -88,7 +88,7 @@ public class StorageActivity extends AppCompatActivity implements StoragePathRec
                     fileOutputStream.write("你好！".getBytes());
                 }
             } else {
-                fileOutputStream = new FileOutputStream(testFile,true);
+                fileOutputStream = new FileOutputStream(testFile, true);
                 fileOutputStream.write("+1".getBytes());
                 showSnack("追加写入成功");
             }

@@ -4,7 +4,8 @@ http://www.androidcycle.com/?p=81
 
 ## 用法
 ```java
-ArrayList<StorageBean> storageData = StorageUtils.getStorageData(this);//获取所有存储介质
+ArrayList<StorageBean> storageDatas = StorageUtils.getStorageData(this);//获取所有存储介质
+遍历storageDatas，得到StorageBean
 
 //是否可移除，是则是外置存储，USB或SD卡
 storageData.getRemovable();
