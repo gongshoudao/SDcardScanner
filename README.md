@@ -6,8 +6,22 @@ http://www.androidcycle.com/?p=81
 ```java
 ArrayList<StorageBean> storageData = StorageUtils.getStorageData(this);//获取所有存储介质
 
+//是否可移除，是则是外置存储，USB或SD卡
+storageData.getRemovable();
+
+//是否已挂载
+storageData.getMounted().equalsIgnoreCase("mounted");
+
+//获取此存储介质的真实路径
+storageData.getPath();
+
 ```
-![演示](/assets/device-2016-07-12-183338.mp4)
+
+机身存储信息
+![机身存储](/assets/internal.png)
+
+SD卡存储信息
+![SD卡](/assets/sdcard.png)
 
 ## 原理
 主要是利用反射获取每个存储介质的StorageVolume及其属性
