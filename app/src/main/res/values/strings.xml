@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">SDcardScanner</string>
+    <string name="test_write_notice_format">注意：测试文件写入将会在 %1$s/Android/data/com.androidcycle.app/目录下创建test.txt文件</string>
+</resources>
