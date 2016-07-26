@@ -3,6 +3,7 @@
 http://www.androidcycle.com/?p=81
 
 ## 用法
+将StorageUtils和StorageBean代码copy到自己的工程。
 ```java
 ArrayList<StorageBean> storageDatas = StorageUtils.getStorageData(this);//获取所有存储介质
 //遍历storageDatas，得到StorageBean
