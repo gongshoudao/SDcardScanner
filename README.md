@@ -111,12 +111,11 @@ public static ArrayList<StorageBean> getStorageData(Context pContext) {
     }
 ```
 ##注意
-    关注Google发布的最新版本的Android源代码，StorageManager的getVolumeList方法是否发生变化，或重命名，
-    关注StorageVolume的属性是否发生变更。不过一般不会大变，如果会变，也会在提前几个版本中用
+关注Google发布的最新版本的Android源代码，StorageManager的getVolumeList方法是否发生变化，或重命名，关注StorageVolume的属性是否发生变更。不过一般不会大变，如果会变，也会在提前几个版本中用
 ```java
 @Deprecated
 ```
-    标注，到那时改也不迟。
+标注，到那时改也不迟。
 
 
 
