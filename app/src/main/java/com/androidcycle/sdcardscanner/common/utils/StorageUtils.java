@@ -76,7 +76,7 @@ public class StorageUtils {
                 long availaleSize = 0;
                 if (Environment.MEDIA_MOUNTED.equals(state)) {
                     totalSize = StorageUtils.getTotalSize(path);
-                    availaleSize = StorageUtils.getAvailaleSize(path);
+                    availaleSize = StorageUtils.getAvailableSize(path);
                 }
                 final String msg = "path==" + path
                         + " ,removable==" + removable
@@ -126,7 +126,7 @@ public class StorageUtils {
         }
     }
 
-    public static long getAvailaleSize(String path) {
+    public static long getAvailableSize(String path) {
         try {
             final StatFs statFs = new StatFs(path);
             long blockSize = 0;
@@ -153,10 +153,7 @@ public class StorageUtils {
         if (space <= 0) {
             return "0";
         }
-
         double gbValue = (double) space / A_GB;
-        Log.e("GB", "gbvalue=" + gbValue);
-
         if (gbValue >= 1) {
             return String.format("%.2fGB", gbValue);
         } else {
@@ -165,7 +162,7 @@ public class StorageUtils {
             if (mbValue >= 1) {
                 return String.format("%.2fMB", mbValue);
             } else {
-                final double kbValue = space / A_GB;
+                final double kbValue = space / A_KB;
                 return String.format("%.2fKB", kbValue);
             }
         }
