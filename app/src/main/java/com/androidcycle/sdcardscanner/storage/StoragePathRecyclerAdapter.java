@@ -12,6 +12,7 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 
 import com.androidcycle.sdcardscanner.R;
+import com.androidcycle.sdcardscanner.common.utils.IOMeter;
 import com.androidcycle.sdcardscanner.common.utils.StorageUtils;
 
 import java.util.ArrayList;
@@ -48,6 +49,7 @@ public class StoragePathRecyclerAdapter extends RecyclerView.Adapter {
     public static class StorageViewHoder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         private final TextView typeTv;
+        private final AppCompatButton testSpeed;
         private StorageOperatorInterface operatorInterface;
         private String mPath;
         private final TextView mNoticeTv;
@@ -81,6 +83,7 @@ public class StoragePathRecyclerAdapter extends RecyclerView.Adapter {
             totalSpaceTv = (TextView) itemView.findViewById(R.id.storage_item_space_total_tv);
             availableSpaceTv = (TextView) itemView.findViewById(R.id.storage_item_space_aviliable_tv);
             openExplorer = (AppCompatButton) itemView.findViewById(R.id.storage_item_open_explorer_btn);
+            testSpeed = (AppCompatButton) itemView.findViewById(R.id.storage_item_delete_test_speed_btn);
             wrTest = (AppCompatButton) itemView.findViewById(R.id.storage_item_write_test_btn);
             deleteTest = (AppCompatButton) itemView.findViewById(R.id.storage_item_delete_test_file_btn);
             mNoticeTv = (TextView) itemView.findViewById(R.id.storage_item_notice);
@@ -129,10 +132,12 @@ public class StoragePathRecyclerAdapter extends RecyclerView.Adapter {
             mNoticeView.setOnClickListener(this);
             this.operatorInterface = operatorInterface;
             openExplorer.setOnClickListener(this);
+            testSpeed.setOnClickListener(this);
             wrTest.setOnClickListener(this);
             deleteTest.setOnClickListener(this);
 
             openExplorer.setEnabled(mounted);
+            testSpeed.setEnabled(mounted);
             wrTest.setEnabled(mounted);
             deleteTest.setEnabled(mounted);
         }
@@ -155,6 +160,15 @@ public class StoragePathRecyclerAdapter extends RecyclerView.Adapter {
                     if (operatorInterface != null) {
                         operatorInterface.onWriteTest(mPath);
                     }
+                    break;
+                case R.id.storage_item_delete_test_speed_btn:
+                    new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            IOMeter.doTest(null, mPath + "/Android/data/com.androidcycle.sdcardscanner/");
+
+                        }
+                    }).start();
                     break;
                 case R.id.storage_item_space_notice:
 //                    showPop();

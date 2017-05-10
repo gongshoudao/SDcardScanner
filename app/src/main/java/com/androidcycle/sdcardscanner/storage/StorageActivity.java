@@ -34,7 +34,7 @@ public class StorageActivity extends AppCompatActivity implements StoragePathRec
         StoragePathRecyclerAdapter storagePathRecyclerAdapter = new StoragePathRecyclerAdapter(this);
         storagePathRecyclerAdapter.refreshData(storageData);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-//        linearLayoutManager.setOrientation(LinearLapeyoutManager.HORIZONTAL);
+        linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         mRecyclerView.setLayoutManager(linearLayoutManager);
         mRecyclerView.setAdapter(storagePathRecyclerAdapter);
     }
