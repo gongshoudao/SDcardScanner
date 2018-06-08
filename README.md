@@ -3,7 +3,7 @@
 ## UPDATE
 有个好消息是，Android API24中，已经将StorageValume放开，作为公共API了，可喜可贺，API24以上可以不用反射了。https://developer.android.com/reference/android/os/storage/StorageVolume
 
-##0 正题
+## 0 正题
 
 目前来看，基本解决了部分乱七八糟的厂商SD卡路径乱放导致无法读取的问题。可以看这个文章
 http://www.androidcycle.com/?p=81
