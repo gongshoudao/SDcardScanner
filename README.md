@@ -6,7 +6,7 @@
 ## 0 正题
 
 目前来看，基本解决了部分乱七八糟的厂商SD卡路径乱放导致无法读取的问题。可以看这个文章
-http://www.androidcycle.com/?p=81
+https://www.androidcycle.com/?p=86
 
 ## 用法
 将StorageUtils和StorageBean代码copy到自己的工程。
